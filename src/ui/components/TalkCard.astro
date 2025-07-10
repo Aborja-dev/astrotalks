@@ -1,0 +1,95 @@
+---
+interface Props {
+    tags: string[];
+    title: string;
+    description: string;
+    large?: boolean;
+}
+
+const { tags, title, description, large = false } = Astro.props;
+---
+
+<article class="h-full relative p-[2px]">
+    <figure class="h-full w-full overlay">
+        <img
+            src="/assets/images/background.jpg"
+            class="h-full w-full object-cover"
+            alt=""
+        />
+    </figure>
+    <div class="absolute h-full flex flex-col justify-between p-8 top-0 left-0">
+        <div class="w-full flex gap-2 items-center">
+            {
+                tags.map((tag) => (
+                    <span class="border-primary border-2 px-2 py-1 rounded-full bg-primary/50 text-text-dark">
+                        {tag}
+                    </span>
+                ))
+            }
+
+        </div>
+        <div class="space-y-8">
+            <h2 class="text-3xl text-text-dark font-bold">
+                {title}
+            </h2>
+            <p class="text-text-dark">
+                {description}
+            </p>
+            <button>
+                <span
+                    class="border-primary border-2 px-4 py-2 rounded-full bg-primary/50 text-text-dark"
+                    >Ver más</span
+                >
+            </button>
+        </div>
+    </div>
+</article>
+
+<style>
+    article {
+        z-index: 1;
+        clip-path: polygon(
+            5% 0,
+            95% 0,
+            100% 5%,
+            100% 95%,
+            95% 100%,
+            5% 100%,
+            0 95%,
+            0 5%
+        );
+    }
+    figure {
+        clip-path: polygon(
+            5% 0,
+            95% 0,
+            100% 5%,
+            100% 95%,
+            95% 100%,
+            5% 100%,
+            0 95%,
+            0 5%
+        );
+        overflow: hidden;
+    }
+    article::after {
+        content: "";
+        position: absolute;
+        inset: -4px; /* grosor del borde */
+        z-index: -1;
+        background: rgba(255, 255, 255, 0.838);
+        clip-path: polygon(
+            5% 0,
+            95% 0,
+            100% 5%,
+            100% 95%,
+            95% 100%,
+            5% 100%,
+            0 95%,
+            0 5%
+        );
+        border: 2px solid #9ca3af; /* color del borde */
+        box-sizing: border-box;
+        pointer-events: none;
+    }
+</style>
