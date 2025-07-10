@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-mint-500: oklch(0.72 0.11 178);
+  --color-principal: oklch(0.72 0.11 178);
+  --color-secondary: oklch(0.92 0.11 178);
+  --color-accent: oklch(0.4 0.81 280);
+  --color-text-light: oklch(1 0 0);
+  --color-text-dark: oklch(0 0 0);
 }
+
+body {
+  font-size: 16px;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../assets/images/bgspace.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body, p, a, span, .copy {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+  font-family: 'Orbitron', sans-serif;
+}
+
