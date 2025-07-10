@@ -1,0 +1,22 @@
+---
+import LinkItem from "@/ui/components/linkItem.astro";
+import RocketIcon from "@/ui/icons/RocketIcon.astro";
+---
+
+<header class="w-full bg-primary h-[70px]">
+    <div class="w-full xl:w-3/4 h-full flex justify-between items-center px-4">
+        <div class="flex items-center gap-2">
+            <RocketIcon width={32} height={32} color={"none"} />
+            <h1 class="text-3xl text-text-light font-bold exan">AstroTAlks</h1>
+        </div>
+        <nav class="">
+            <ul class="flex items-center gap-2">
+                <LinkItem href="#" label="Acerca de"  />
+                <LinkItem href="#" label="Exposiciones"  />
+                <LinkItem href="#" label="Participantes"  />
+                <LinkItem href="#" label="Postulate"  />
+                
+            </ul>
+        </nav>
+    </div>
+</header>

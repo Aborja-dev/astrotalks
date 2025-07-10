@@ -1,0 +1,15 @@
+---
+import HeroSection from "@/ui/components/HeroSection.astro";
+import RocketIcon from "@/ui/icons/RocketIcon.astro";
+
+const copys = {
+    HERO: {
+        TITLE: "Lorem ipsum dolor sit amet.",
+        SUBTITLE: "Lorem ipsum dolor sit amet consectetur.",
+        DESCRIPTION: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni.",
+    }
+}
+
+---
+
+<HeroSection title={copys.HERO.TITLE} subtitle={copys.HERO.SUBTITLE} description={copys.HERO.DESCRIPTION} urlCoverImage="/assets/images/background.jpg"/>

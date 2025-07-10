@@ -1,11 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-principal: oklch(0.72 0.11 178);
+  --color-primary: oklch(0.72 0.11 178);
   --color-secondary: oklch(0.92 0.11 178);
   --color-accent: oklch(0.4 0.81 280);
   --color-text-light: oklch(1 0 0);
   --color-text-dark: oklch(0 0 0);
+}
+
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'Exan';
+  src: url('/assets/fonts/Exan-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.overlay::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 30%, 0.5) 80%);
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+
+.exan {
+  font-family: 'Exan', sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 body {
