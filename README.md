@@ -1,47 +1,35 @@
-# Astro Starter Kit: Minimal
+# 🚀 AstroTalks
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+Una plataforma moderna para democratizar el conocimiento sobre el espacio y la astronomía a través de conferencias magistrales impartidas por astronautas, astrofísicos e ingenieros espaciales.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+![AstroTalks Preview](./public/assets/images/background.jpg)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✨ Características
 
-## 🚀 Project Structure
+- **Diseño Espacial Inmersivo**: Interfaz temática con efectos visuales avanzados y animaciones fluidas
+- **Sistema de Componentes Modular**: Arquitectura escalable con componentes reutilizables
+- **Experiencia Responsive**: Optimizado para todos los dispositivos
+- **Animaciones Avanzadas**: Efectos hover, transiciones y clip-paths personalizados
+- **TypeScript**: Tipado fuerte para mayor robustez del código
+- **Performance Optimizada**: Construido con Astro para carga ultra-rápida
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tecnologías
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **[Astro](https://astro.build/)** - Framework web moderno
+- **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework de utilidades CSS
+- **[PNPM](https://pnpm.io/)** - Gestor de paquetes eficiente
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Inicio Rápido
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Prerrequisitos
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Node.js 18+ 
+- PNPM
 
-## 🧞 Commands
+### Instalación
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. **Clona el repositorio**
+```bash
+git clone https://github.com/Aborja-dev/astrotalks.git
+cd astrotalks
