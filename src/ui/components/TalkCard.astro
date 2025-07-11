@@ -1,20 +1,16 @@
 ---
-interface Props {
-    tags: string[];
-    title: string;
-    description: string;
-    large?: boolean;
-}
+import { type TalkInfo } from "@/lib/types";
+interface Props extends TalkInfo {}
 
-const { tags, title, description, large = false } = Astro.props;
+const { tags, title, description, coverURl, id } = Astro.props
 ---
 
 <article class="h-full relative p-[2px]">
     <figure class="h-full w-full overlay">
         <img
-            src="/assets/images/background.jpg"
+            src={coverURl}
             class="h-full w-full object-cover"
-            alt=""
+            alt={title}
         />
     </figure>
     <div class="absolute h-full flex flex-col justify-between p-8 top-0 left-0">

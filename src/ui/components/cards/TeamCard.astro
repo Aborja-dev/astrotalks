@@ -1,0 +1,31 @@
+---
+import { type User } from "@/lib/types";
+interface Props extends User {}
+const { name, avatar, bio, id } = Astro.props;
+---
+
+<article
+    class="rounded-tl-4xl overflow-hidden rounded-br-4xl border-2 border-primary w-full h-full bg-slate-700"
+>
+    <figure class="w-full h-2/5">
+        <img
+            src={avatar}
+            class="w-full h-full object-cover object-top"
+            alt={name}
+        />
+    </figure>
+    <div class="w-full h-3/5 flex flex-col justify-end gap-8 p-8">
+        <h2 class="text-text-light text-2xl font-bold">{name}</h2>
+        <p>
+            {bio}
+        </p>
+        <div class="w-full flex justify-center">
+            <button>
+                <span
+                    class="border-primary border-2 px-4 py-2 rounded-full bg-primary/50 text-text-dark"
+                    >Ver más</span
+                >
+            </button>
+        </div>
+    </div>
+</article>

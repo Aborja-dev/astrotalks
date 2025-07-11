@@ -1,21 +1,23 @@
 ---
-
+interface Props {
+    sectionTitle: string;
+    copy: string;
+    formTitle: string;
+}
+const { sectionTitle, copy, formTitle } = Astro.props
 ---
 
 <section class="w-full py-8">
     <h2 class="text-3xl text-text-light font-bold text-center mb-8">
-        Contactanos
+        {sectionTitle}
     </h2>
     <div class="w-4/5 h-full grid grid-cols-2 gap-4 mx-auto">
         <p class="text-text-light text-3xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
-            minus ipsum nisi magnam perferendis obcaecati doloremque explicabo.
-            Repudiandae beatae laborum, ullam similique facere voluptatum!
-            Repellendus dicta possimus rem doloribus maxime.
+            {copy}
         </p>
         <div class="rounded-lg bg-slate-800 p-8">
             <h2 class="text-3xl text-text-light text-center font-bold mb-4">
-                Formulario
+                {formTitle}
             </h2>
             <form class="flex flex-col justify-between gap-4 mt-8">
                 <fieldset class="flex flex-col gap-2">

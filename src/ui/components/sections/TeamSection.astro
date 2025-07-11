@@ -1,0 +1,24 @@
+---
+import type { Section, User } from '@/lib/types'
+import TeamCard from '@/ui/components/cards/TeamCard.astro'
+
+
+interface Props extends Section {
+    users: User[]
+}
+const { users, title, subtitle } = Astro.props
+---
+
+<section class="w-full my-32 h-[500px] bg-gray-800/90 backdrop-blur-lg">
+     <h2 class="text-3xl text-text-light font-bold text-center mb-8">{title}</h2>
+    <h3 class="text-3xl text-text-light font-bold text-center mb-8"> {subtitle}</h3>
+    <div class="w-4/5 mx-auto py-8 h-full justify-between flex gap-4">
+        {
+            users.map((user) => (
+                <div class="w-1/4 h-full">
+                    <TeamCard {...user} />
+                </div>
+            ))
+        }
+    </div>
+</section>

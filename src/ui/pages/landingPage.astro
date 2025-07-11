@@ -1,23 +1,100 @@
 ---
-import AboutSection from "@/ui/components/AboutSection.astro";
-import HeroSection from "@/ui/components/HeroSection.astro";
-import ProposalSection from "@/ui/components/ProposalSection.astro";
-import TalkCard from "@/ui/components/TalkCard.astro";
-import TalksSection from "@/ui/components/TalksSection.astro";
-import TeamSection from "@/ui/components/TeamSection.astro";
+import type { TalkInfo, User } from "@/lib/types";
+import AboutSection from "@/ui/components/sections/AboutSection.astro";
+import HeroSection from "@/ui/components/sections/HeroSection.astro";
+import ProposalSection from "@/ui/components/sections/ProposalSection.astro";
+import TalksSection from "@/ui/components/sections/TalksSection.astro";
+import TeamSection from "@/ui/components/sections/TeamSection.astro";
 
 const copys = {
     HERO: {
         TITLE: "Lorem ipsum dolor sit amet.",
         SUBTITLE: "Lorem ipsum dolor sit amet consectetur.",
+        DESCRIPTION:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni.",
+        CTA: "Explora ahora",
+    },
+    ABOUT: {
         DESCRIPTION: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni.",
+    },
+    TEAM: {
+        TITLE: "TEAM",
+        SUBTITLE: "Lorem ipsum dolor sit amet consectetur.",
+    },
+    TALKS: {
+        TITLE: "SUBTITLE",
+        SUBTITLE: "Lorem ipsum dolor sit amet consectetur.",
+    },
+    CONTACT: {
+        INFO: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni.",
+        TITLE: "CONTACTO",
     }
-}
-
+};
+const talks: TalkInfo[] = [
+    {
+        id: "1",
+        title: "Titulo de la exposicion",
+        description: "lorem ipsum",
+        tags: ["astronomia"],
+        coverURl: "/assets/images/background.jpg",
+    },
+    {
+        id: "2",
+        title: "Titulo de la exposicion",
+        description: "lorem ipsum",
+        tags: ["astronomia"],
+        coverURl: "/assets/images/background.jpg",
+    },
+    {
+        id: "3",
+        title: "Titulo de la exposicion",
+        description: "lorem ipsum",
+        tags: ["astronomia"],
+        coverURl: "/assets/images/background.jpg",
+    },
+    {
+        id: "4",
+        title: "Titulo de la exposicion",
+        description: "lorem ipsum",
+        tags: ["astronomia"],
+        coverURl: "/assets/images/background.jpg",
+    },
+];
+const users: User[] = [
+    {
+        id: "1",
+        name: "Lorem ipsum",
+        email: "Lorem ipsum",
+        avatar: "/assets/images/user1.jpg",
+        title: "Lorem ipsum",
+        bio: "Lorem ipsum",
+    },
+    {
+        id: "2",
+        name: "Lorem ipsum",
+        email: "Lorem ipsum",
+        avatar: "/assets/images/user1.jpg",
+        title: "Lorem ipsum",
+        bio: "Lorem ipsum",
+    },
+    {
+        id: "3",
+        name: "Lorem ipsum",
+        email: "Lorem ipsum",
+        avatar: "/assets/images/user1.jpg",
+        title: "Lorem ipsum",
+        bio: "Lorem ipsum",
+    }
+]
 ---
 
-<HeroSection title={copys.HERO.TITLE} subtitle={copys.HERO.SUBTITLE} description={copys.HERO.DESCRIPTION} urlCoverImage="/assets/images/background.jpg"/>
-<AboutSection/>
- <TalksSection  />
- <TeamSection />
- <ProposalSection />
+<HeroSection
+    title={copys.HERO.TITLE}
+    subtitle={copys.HERO.SUBTITLE}
+    description={copys.HERO.DESCRIPTION}
+    urlCoverImage="/assets/images/background.jpg"
+/>
+<AboutSection description={copys.ABOUT.DESCRIPTION}/>
+<TalksSection talks={talks} title={copys.TALKS.TITLE} subtitle={copys.TALKS.SUBTITLE} />
+<TeamSection users={users} title={copys.TEAM.TITLE} subtitle={copys.TEAM.SUBTITLE}/>
+<ProposalSection />

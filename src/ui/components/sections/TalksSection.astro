@@ -1,0 +1,33 @@
+---
+import type { Section, TalkInfo } from "@/lib/types";
+import TalkCard from "@/ui/components/TalkCard.astro";
+import TalkCardShort from "@/ui/components/TalkCardShort.astro";
+interface Props extends Section {
+    talks: TalkInfo[]
+}
+
+const { talks, title, subtitle } = Astro.props
+
+---
+
+<section class="w-full h-[700px] py-8">
+    <h2 class="text-3xl text-text-light font-bold text-center mb-8">{title}</h2>
+    <h3 class="text-3xl text-text-light font-bold text-center mb-8"> {subtitle}</h3>
+    <div class="w-4/5 h-full grid grid-cols-5 gap-4 mx-auto grid-rows-3">
+        <div class="col-span-3 row-span-2">
+            <TalkCard {...talks[0]} />
+        </div>
+        <div class="col-span-2 row-span-2">
+            <TalkCard {...talks[1]} />
+        </div>
+        <div class="col-span-3">
+            <TalkCardShort {...talks[2]} />
+        </div>
+        <div>
+           <TalkCardShort {...talks[3]} />
+        </div>
+        <div>
+            <TalkCardShort {...talks[4]} />
+        </div>
+    </div>
+</section>
