@@ -5,7 +5,7 @@ import url from 'node:url'
 import tailwindcss from '@tailwindcss/vite';
 const _dirname = path.dirname(url.fileURLToPath(import.meta.url))
 import db from '@astrojs/db';
-
+import vercelStatic from '@astrojs/vercel/static';
 import auth from 'auth-astro';
 
 import vercel from '@astrojs/vercel';
@@ -20,7 +20,7 @@ export default defineConfig({
     },
     plugins: [tailwindcss()]
   },
-
+output: 'static',
   integrations: [db()],
   adapter: vercel()
 });
