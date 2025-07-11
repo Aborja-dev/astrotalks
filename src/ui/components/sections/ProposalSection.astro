@@ -1,4 +1,8 @@
 ---
+import Button from '@/ui/components/Button.astro';
+import Input from '@/ui/components/Input.astro';
+import TextArea from '@/ui/components/TextArea.astro';
+
 interface Props {
     sectionTitle: string;
     copy: string;
@@ -20,50 +24,11 @@ const { sectionTitle, copy, formTitle } = Astro.props
                 {formTitle}
             </h2>
             <form class="flex flex-col justify-between gap-4 mt-8">
-                <fieldset class="flex flex-col gap-2">
-                    <label
-                        class="text-text-light font-bold title text-lg uppercase"
-                        for="name">Nombre</label
-                    >
-                    <input
-                        class="px-4 py-2 rounded-lg bg-slate-700"
-                        type="text"
-                    />
-                </fieldset>
-                <fieldset class="flex flex-col gap-2">
-                    <label
-                        class="text-text-light font-bold title text-lg uppercase"
-                        for="name">Email</label
-                    >
-                    <input
-                        class="px-4 py-2 rounded-lg bg-slate-700"
-                        type="text"
-                    />
-                </fieldset>
-                <fieldset class="flex flex-col gap-2">
-                    <label
-                        class="text-text-light font-bold title text-lg uppercase"
-                        for="name">Titulo</label
-                    >
-                    <input
-                        class="px-4 py-2 rounded-lg bg-slate-700"
-                        type="text"
-                    />
-                </fieldset>
-                <fieldset class="flex flex-col gap-2">
-                    <label
-                        class="text-text-light font-bold title text-lg uppercase"
-                        for="name">Description</label
-                    >
-                    <textarea rows="10" name="" id="" class="px-2 py-2 rounded-lg bg-slate-700" id="">Hablanos de ti
-                    </textarea>
-                </fieldset>
-                <button type="submit">
-                    <span
-                        class="border-primary border-2 px-4 py-2 rounded-full bg-primary/50 text-text-dark"
-                        >Quiero participar</span
-                    >
-                </button>
+                <Input label="Nombre" /> 
+                <Input label="Email" />
+                <Input label="Telefono" />
+                <TextArea label="Descripcion" rows={10} placeholder="Escribe aqui tu propuesta" />
+                <Button label="Enviar" />
             </form>
         </div>
     </div>

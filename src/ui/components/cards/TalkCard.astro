@@ -1,17 +1,14 @@
 ---
 import { type TalkInfo } from "@/lib/types";
+import Button from "@/ui/components/Button.astro";
 interface Props extends TalkInfo {}
 
-const { tags, title, description, coverURl, id } = Astro.props
+const { tags, title, description, coverURl, id } = Astro.props;
 ---
 
 <article class="h-full relative p-[2px]">
     <figure class="h-full w-full overlay">
-        <img
-            src={coverURl}
-            class="h-full w-full object-cover"
-            alt={title}
-        />
+        <img src={coverURl} class="h-full w-full object-cover" alt={title} />
     </figure>
     <div class="absolute h-full flex flex-col justify-between p-8 top-0 left-0">
         <div class="w-full flex gap-2 items-center">
@@ -22,7 +19,6 @@ const { tags, title, description, coverURl, id } = Astro.props
                     </span>
                 ))
             }
-
         </div>
         <div class="space-y-8">
             <h2 class="text-3xl text-text-dark font-bold">
@@ -31,7 +27,7 @@ const { tags, title, description, coverURl, id } = Astro.props
             <p class="text-text-dark">
                 {description}
             </p>
-   
+            <Button label="Ver más" />
         </div>
     </div>
 </article>

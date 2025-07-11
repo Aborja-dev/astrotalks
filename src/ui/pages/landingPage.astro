@@ -27,7 +27,8 @@ const copys = {
     },
     CONTACT: {
         INFO: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, enim ut accusamus veritatis mollitia alias voluptates quia dolorem. Cupiditate, magni.",
-        TITLE: "CONTACTO",
+        FORM_TITLE: "CONTACTO",
+        TITLE: "Lorem ipsum dolor sit amet consectetur.",
     }
 };
 const talks: TalkInfo[] = [
@@ -97,4 +98,4 @@ const users: User[] = [
 <AboutSection description={copys.ABOUT.DESCRIPTION}/>
 <TalksSection talks={talks} title={copys.TALKS.TITLE} subtitle={copys.TALKS.SUBTITLE} />
 <TeamSection users={users} title={copys.TEAM.TITLE} subtitle={copys.TEAM.SUBTITLE}/>
-<ProposalSection />
+<ProposalSection copy={copys.CONTACT.INFO} formTitle={copys.CONTACT.FORM_TITLE} sectionTitle={copys.CONTACT.TITLE} />

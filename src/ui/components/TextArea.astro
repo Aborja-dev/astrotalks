@@ -1,0 +1,23 @@
+---
+interface Props {
+    label: string
+    rows?: number
+    placeholder?: string
+}
+const { label, rows, placeholder } = Astro.props
+---
+
+<fieldset class="flex flex-col gap-2">
+    <label class="text-text-light font-bold title text-lg uppercase" for="name"
+        >{label}</label
+    >
+    <textarea
+        rows={rows}
+        name=""
+        id=""
+        class="px-2 py-2 rounded-lg bg-slate-700"
+        id=""
+        placeholder={placeholder}
+        >
+    </textarea>
+</fieldset>
