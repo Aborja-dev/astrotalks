@@ -44,7 +44,7 @@ body {
   font-size: 16px;
   width: 100%;
   min-height: 100vh;
-  background-image: url('../assets/images/bgspace.png');
+  background-image: url('/assets/images/bgspace.png');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
