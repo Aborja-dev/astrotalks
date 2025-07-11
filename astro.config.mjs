@@ -12,10 +12,9 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    optimizeDeps: {
-      exclude: ['@']
-
-    },
+    resolve: { alias: {
+      '@': './src'
+    } },
     plugins: [tailwindcss()]
   },
 
