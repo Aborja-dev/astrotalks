@@ -7,8 +7,9 @@ export interface Props {
     subtitle: string;
     description: string;
     urlCoverImage: string
+    ctaText: string
 }
-const { title, subtitle, description, urlCoverImage } = Astro.props;
+const { title, subtitle, description, urlCoverImage, ctaText } = Astro.props;
 
 ---
 
@@ -18,13 +19,13 @@ const { title, subtitle, description, urlCoverImage } = Astro.props;
     </figure>
     <div class=""></div>    
     <div class="absolute top-1/2 left-[100px]  space-y-4 max-w-[600px] mt-[-100px]">
-        <h2 class="text-2xl text-text-dark">{subtitle}</h2>
+        <h2 class="text-2xl text-text-light">{subtitle}</h2>
         <h1 class="text-5xl font-semibold text-accent">{title}</h1>
-        <p class="text-text-dark text-lg">{description}</p>
+        <p class="text-text-light text-lg">{description}</p>
 
         <CTA>
             <RocketIcon />
-            Launchtime
+            {ctaText}
         </CTA>
         
     </div>

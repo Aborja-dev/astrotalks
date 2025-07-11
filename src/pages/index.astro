@@ -1,9 +1,97 @@
 ---
+import type { TalkInfo, User } from "@/lib/types";
 import MainLayout from "@/ui/layout/MainLayout.astro";
 import LandingPage from "@/ui/pages/LandingPage.astro";
 
-
+const copys = {
+    HERO: {
+        TITLE: "Explora el Cosmos desde Casa",
+        SUBTITLE: "Los secretos del espacio y la astronomía en tu casa",
+        DESCRIPTION:
+            "Accede a las mejores conferencias sobre astronomía, exploración espacial y ciencias del cosmos. Desde misiones a Marte hasta descubrimientos de exoplanetas, mantente al día con los últimos avances en la exploración del universo a través de charlas de expertos internacionales.",
+        CTA: "Explorar conferencias",
+    },
+    ABOUT: {
+        DESCRIPTION: "Somos una plataforma dedicada a democratizar el conocimiento sobre el espacio y la astronomía. Curamos y organizamos las mejores conferencias impartidas por astronautas, astrofísicos, ingenieros espaciales y exploradores del cosmos. Nuestro dashboard te permite acceder fácilmente a contenido especializado sobre misiones espaciales, descubrimientos astronómicos y el futuro de la exploración interestelar.",
+    },
+    TEAM: {
+        TITLE: "NUESTRO EQUIPO",
+        SUBTITLE: "Expertos en divulgación científica espacial y tecnología",
+    },
+    TALKS: {
+        TITLE: "CONFERENCIAS",
+        SUBTITLE: "Charlas magistrales sobre exploración espacial y astronomía",
+    },
+    CONTACT: {
+        INFO: "¿Tienes preguntas sobre el espacio o quieres sugerir una conferencia específica? Nuestro equipo está aquí para ayudarte a encontrar el contenido que buscas. También colaboramos con instituciones educativas y centros de investigación para crear contenido personalizado sobre temas espaciales.",
+        FORM_TITLE: "CONTACTO",
+        TITLE: "Conecta con el cosmos",
+    }
+};
+const talks: TalkInfo[] = [
+   {
+       id: "1",
+       title: "El Telescopio James Webb: Revolucionando la Astronomía",
+       description: "Descubre los últimos hallazgos del telescopio más potente jamás construido. Desde galaxias primordiales hasta exoplanetas habitables, exploramos cómo el JWST está cambiando nuestra comprensión del universo.",
+       tags: ["astronomia", "tecnologia", "descubrimientos"],
+       coverURl: "/assets/images/space1.jpg",
+   },
+   {
+       id: "2",
+       title: "Misión Artemis: El Retorno Humano a la Luna",
+       description: "Un análisis detallado de la misión Artemis y los planes para establecer una base lunar permanente. Conoce los desafíos técnicos y científicos que enfrentamos en nuestro regreso al satélite natural.",
+       tags: ["exploracion", "luna", "misiones"],
+       coverURl: "/assets/images/space2.jpg",
+   },
+   {
+       id: "3",
+       title: "Vida en Marte: Evidencias y Posibilidades",
+       description: "Examinamos las evidencias de vida pasada y presente en Marte. Desde los hallazgos del rover Perseverance hasta las futuras misiones tripuladas al planeta rojo.",
+       tags: ["marte", "astrobiologia", "exploracion"],
+       coverURl: "/assets/images/space3.jpg",
+   },
+   {
+       id: "4",
+       title: "Agujeros Negros: Los Gigantes Cósmicos",
+       description: "Sumérgete en el fascinante mundo de los agujeros negros. Desde la primera imagen de Sagitario A* hasta las ondas gravitacionales, exploramos estos enigmáticos objetos cósmicos.",
+       tags: ["astrofisica", "agujeros-negros", "ciencia"],
+       coverURl: "/assets/images/space4.jpg",
+   },
+   {
+       id: "5",
+       title: "SpaceX y el Futuro de los Viajes Espaciales",
+       description: "Analizamos cómo SpaceX está transformando la industria espacial con cohetes reutilizables, Starship y los planes para colonizar Marte. El futuro de la exploración espacial comercial.",
+       tags: ["tecnologia", "spacex", "innovacion"],
+       coverURl: "/assets/images/space5.jpg",
+   },
+];
+const users: User[] = [
+   {
+       id: "1",
+       name: "Dr. Elena Martínez",
+       email: "e.martinez@nasa.gov",
+       avatar: "/assets/images/user2.jpg",
+       title: "Astrofísica de Exoplanetas - NASA",
+       bio: "Especialista en detección y caracterización de exoplanetas habitables. Líder del equipo de análisis de datos del telescopio James Webb.",
+   },
+   {
+       id: "2",
+       name: "Comandante Alex Chen",
+       email: "a.chen@esa.int",
+       avatar: "/assets/images/user1.jpg",
+       title: "Astronauta - Agencia Espacial Europea",
+       bio: "Veterano de tres misiones espaciales incluyendo la Estación Espacial Internacional. Experto en operaciones EVA y sistemas de soporte vital.",
+   },
+   {
+       id: "3",
+       name: "Dr. María Rodríguez",
+       email: "m.rodriguez@spacex.com",
+       avatar: "/assets/images/user2.jpg",
+       title: "Ingeniera de Propulsión - SpaceX",
+       bio: "Ingeniera líder en el desarrollo de motores Raptor para misiones a Marte. Especialista en sistemas de propulsión avanzada y combustibles criogénicos.",
+   }
+]
 ---
 <MainLayout title="Astro">
-    <LandingPage />
+    <LandingPage copys={copys} talks={talks} users={users} />
 </MainLayout>

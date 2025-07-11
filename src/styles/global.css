@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: oklch(0.72 0.11 178);
-  --color-secondary: oklch(0.92 0.11 178);
-  --color-accent: oklch(0.4 0.81 280);
-  --color-text-light: oklch(1 0 0);
-  --color-text-dark: oklch(0 0 0);
+  --color-primary: oklch(0.65 0.15 240);     /* Azul espacial vibrante */
+  --color-secondary: oklch(0.15 0.02 240);   /* Azul muy oscuro, casi negro */
+  --color-accent: oklch(0.75 0.20 60);       /* Dorado/amarillo estelar */
+  --color-text-light: oklch(0.95 0.01 240);  /* Blanco con tinte azul */
+  --color-text-dark: oklch(0.20 0.05 240);   /* Gris oscuro azulado */
 }
-
 /* Register your custom font family and tell the browser where to find it. */
 @font-face {
   font-family: 'Exan';
@@ -21,7 +20,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 30%, 0.5) 80%);
+  background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 30%, 0.5) 90%);
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -37,7 +36,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, button:hover {
   cursor: pointer;
 }
 

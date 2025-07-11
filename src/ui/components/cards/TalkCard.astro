@@ -1,33 +1,32 @@
 ---
 import { type TalkInfo } from "@/lib/types";
+import Badge from "@/ui/components/Badge.astro";
 import Button from "@/ui/components/Button.astro";
 interface Props extends TalkInfo {}
 
 const { tags, title, description, coverURl, id } = Astro.props;
 ---
 
-<article class="h-full relative p-[2px]">
+<article class="h-full relative p-[2px] group cursor-pointer">
     <figure class="h-full w-full overlay">
-        <img src={coverURl} class="h-full w-full object-cover" alt={title} />
+        <img src={coverURl} class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110" alt={title} />
     </figure>
-    <div class="absolute h-full flex flex-col justify-between p-8 top-0 left-0">
+    <div class="absolute h-full flex flex-col justify-between p-8 top-0 left-0 transition-all duration-300 ease-out group-hover:backdrop-blur-sm">
         <div class="w-full flex gap-2 items-center">
             {
                 tags.map((tag) => (
-                    <span class="border-primary border-2 px-2 py-1 rounded-full bg-primary/50 text-text-dark">
-                        {tag}
-                    </span>
+                    <Badge tag={tag} />
                 ))
             }
         </div>
-        <div class="space-y-8">
-            <h2 class="text-3xl text-text-dark font-bold">
+        <div class="space-y-8 transform transition-all duration-300 ease-out group-hover:translate-y-[-8px]">
+            <h2 class="text-3xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary">
                 {title}
             </h2>
-            <p class="text-text-dark">
+            <p class="text-text-light transition-all duration-300 ease-out group-hover:text-text-light/90">
                 {description}
             </p>
-            <Button label="Ver más" />
+            <Button label="Ver más" />
         </div>
     </div>
 </article>
@@ -45,7 +44,14 @@ const { tags, title, description, coverURl, id } = Astro.props;
             0 95%,
             0 5%
         );
+        transition: all 0.3s ease-out;
     }
+    
+    article:hover {
+        transform: translateY(-5px) scale(1.02);
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+    }
+    
     figure {
         clip-path: polygon(
             5% 0,
@@ -59,12 +65,13 @@ const { tags, title, description, coverURl, id } = Astro.props;
         );
         overflow: hidden;
     }
+    
     article::after {
         content: "";
         position: absolute;
-        inset: -4px; /* grosor del borde */
+        inset: -4px;
         z-index: -1;
-        background: rgba(255, 255, 255, 0.838);
+        background: oklch(0.65 0.15 240);
         clip-path: polygon(
             5% 0,
             95% 0,
@@ -75,8 +82,17 @@ const { tags, title, description, coverURl, id } = Astro.props;
             0 95%,
             0 5%
         );
-        border: 2px solid #9ca3af; /* color del borde */
+        border: 2px solid #9ca3af;
         box-sizing: border-box;
         pointer-events: none;
+        transition: all 0.3s ease-out;
+    }
+    
+    article:hover::after {
+        background: oklch(0.75 0.20 240);
+        border-color: oklch(0.65 0.15 240);
+        box-shadow: 
+            0 0 30px rgba(var(--color-primary-rgb, 65, 105, 225), 0.6),
+            inset 0 0 20px rgba(var(--color-primary-rgb, 65, 105, 225), 0.2);
     }
 </style>
