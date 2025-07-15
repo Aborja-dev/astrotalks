@@ -1,10 +1,16 @@
 ---
 import LinkItem from "@/ui/components/LinkItem.astro";
+import MenuIcon from "@/ui/icons/MenuIcon.astro";
 import RocketIcon from "@/ui/icons/RocketIcon.astro";
 ---
 
+<div
+    id="overlay"
+    class="fixed hidden z-10 backdrop-blur-sm top-0 left-0 w-full h-full bg-slate-700/30"
+>
+</div>
 <header
-    class="w-full bg-gradient-to-b from-secondary to-primary/50 h-[70px] z-10 shadow-2xl shadow-gray-950"
+    class="w-full bg-gradient-to-b from-secondary to-primary/80 h-[70px] z-10 shadow-2xl shadow-gray-950 backdrop-blur-lg sticky top-0"
 >
     <div class="w-full xl:w-3/4 h-full flex justify-between items-center px-4">
         <div class="flex items-center gap-2">
@@ -16,25 +22,88 @@ import RocketIcon from "@/ui/icons/RocketIcon.astro";
             />
             <h1 class="text-3xl text-text-light font-bold exan">AstroTAlks</h1>
         </div>
-        <nav class="lg:block md:hidden">
+        <nav class="xl:block hidden">
             <ul class="flex items-center gap-2">
+                <LinkItem href="#hero" label="Inicio" />
                 <LinkItem href="#about" label="Acerca de" />
                 <LinkItem href="#talks" label="Exposiciones" />
                 <LinkItem href="#team" label="Participantes" />
                 <LinkItem href="#contact" label="Postulate" />
             </ul>
         </nav>
-<!--         <nav
-            class="lg:hidden md:block w-3/4 fixed top-0 left-0 z-10 h-[800px] bg-secondary/50 backdrop-blur-sm p-8"
-        >
-            <ul
-                class="text-text-light title text-4xl font-bold text-center uppercase flex flex-col h-full gap-12"
-            >
-                <LinkItem type="title" href="#about" label="Acerca de" />
-                <LinkItem type="title" href="#talks" label="Exposiciones" />
-                <LinkItem type="title" href="#team" label="Participantes" />
-                <LinkItem type="title" href="#contact" label="Postulate" />
-            </ul>
-        </nav> -->
+        <label for="menu-control" class="lg:hidden md:block">
+            <MenuIcon width={32} height={32} stroke="oklch(1 0 240)" />
+        </label>
     </div>
+    <input type="checkbox" name="menu" id="menu-control" class="hidden" />
+    <nav
+        id="menu-container"
+        class="lg:hidden md:block w-3/4 fixed top-0 left-0 z-30 h-[800px] bg-secondary/50 p-8"
+    >
+        <ul
+            class="text-text-light title text-4xl font-bold text-center uppercase flex flex-col h-full gap-12"
+        >
+            <LinkItem type="title" href="#hero" label="Inicio" />
+            <LinkItem type="title" href="#about" label="Acerca de" />
+            <LinkItem type="title" href="#talks" label="Exposiciones" />
+            <LinkItem type="title" href="#team" label="Participantes" />
+            <LinkItem type="title" href="#contact" label="Postulate" />
+        </ul>
+    </nav>
 </header>
+
+<style>
+    #menu-container {
+        transform: translate(-100%, 0);
+        transition: transform 0.3s ease-in-out;
+        backdrop-filter: blur(10px);
+    }
+
+    #menu-control:checked ~ #menu-container {
+        transform: translate(0, 0);
+    }
+    .cyber-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 100%;
+        background-image: linear-gradient(
+                rgba(79, 195, 247, 0.1) 1px,
+                transparent 1px
+            ),
+            linear-gradient(90deg, rgba(79, 195, 247, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: gridMove 10s linear infinite;
+    }
+</style>
+<script>
+    const menuControl = document.querySelector(
+        "#menu-control",
+    ) as HTMLInputElement;
+    const menuContainer = document.querySelector("#menu-container");
+    const overlay = document.querySelector("#overlay");
+    const close = () => {
+        if (!menuControl || !menuContainer || !overlay) throw new Error("No se puede cerrar el menu");
+        document.body.classList.remove("overflow-hidden");
+        menuControl.checked = false;
+        overlay.classList.add("hidden");
+    }
+    if (menuControl && menuContainer && overlay) {
+        menuControl.addEventListener("click", () => {
+            document.body.classList.toggle("overflow-hidden");
+            overlay.classList.toggle("hidden");
+        });
+        overlay.addEventListener("click", () => {
+            close();
+        });
+        menuContainer.addEventListener("click", (event) => {
+            const isLinkClicked = event.target instanceof HTMLAnchorElement;
+            if (isLinkClicked) {
+                close();
+            }
+            
+        });
+    }
+
+</script>

@@ -1,0 +1,31 @@
+---
+interface Props {
+    width?: number;
+    height?: number;
+    color?: string;
+    stroke?: string;
+}
+const { width, height, color, stroke } = Astro.props;
+
+const values = {
+    width: width ? width : 24,
+    height: height ? height : 24,
+    color: color ? color : "currentColor",
+    stroke: stroke ? stroke : "currentColor",
+};
+---
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={values.width}
+    height={values.height}
+    fill={values.color}
+    stroke={values.stroke}
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-menu-icon lucide-menu"
+    ><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"
+    ></path></svg
+>

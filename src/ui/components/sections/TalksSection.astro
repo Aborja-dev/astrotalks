@@ -3,7 +3,6 @@ import type { Section, TalkInfo } from "@/lib/types";
 import Badge from "@/ui/components/Badge.astro";
 import TalkCard from "@/ui/components/cards/TalkCard.astro";
 
-
 interface Props extends Section {
     talks: TalkInfo[];
 }
@@ -28,19 +27,26 @@ const { talks, title, subtitle } = Astro.props;
         </div>
         <div class="xl:col-span-2 xl:row-span-2">
             <TalkCard {...talks[1]}>
-                <div slot="tags" class="space-x-2">
+                <div slot="tags" class="flex flex-wrap gap-3">
                     {talks[1].tags.map((tag) => <Badge label={tag} />)}
                 </div>
+                <Fragment slot="title">
+                    <h2
+                        class="text-xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
+                    >
+                        {talks[1].title}
+                    </h2>
+                </Fragment>
             </TalkCard>
         </div>
         <div class="xl:col-span-3">
-       <TalkCard coverURl={talks[2].coverURl} title={talks[2].title}>
-                <div slot="tags" class="space-x-2 block ">
+            <TalkCard coverURl={talks[2].coverURl} title={talks[2].title}>
+                <div slot="tags" class="flex flex-wrap xl:hidden gap-3">
                     {talks[2].tags.map((tag) => <Badge label={tag} />)}
                 </div>
                 <Fragment slot="title">
                     <h2
-                        class="text-3xl xl:text-xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
+                        class="text-xl  text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
                     >
                         {talks[2].title}
                     </h2>
@@ -55,13 +61,13 @@ const { talks, title, subtitle } = Astro.props;
             </TalkCard>
         </div>
         <div>
-           <TalkCard coverURl={talks[3].coverURl} title={talks[3].title}>
-                <div slot="tags" class="space-x-2 block xl:hidden">
+            <TalkCard coverURl={talks[3].coverURl} title={talks[3].title}>
+                <div slot="tags" class="flex flex-wrap gap-3 xl:hidden">
                     {talks[3].tags.map((tag) => <Badge label={tag} />)}
                 </div>
                 <Fragment slot="title">
                     <h2
-                        class="xl:text-base text-3xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
+                        class="xl:text-base text-xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
                     >
                         {talks[3].title}
                     </h2>
@@ -77,12 +83,12 @@ const { talks, title, subtitle } = Astro.props;
         </div>
         <div>
             <TalkCard coverURl={talks[4].coverURl} title={talks[4].title}>
-                <div slot="tags" class="space-x-2 block xl:hidden">
+                <div slot="tags"class="flex flex-wrap gap-3 xl:hidden">
                     {talks[4].tags.map((tag) => <Badge label={tag} />)}
                 </div>
                 <Fragment slot="title">
                     <h2
-                        class="xl:text-base text-3xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
+                        class="xl:text-base text-xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
                     >
                         {talks[4].title}
                     </h2>
