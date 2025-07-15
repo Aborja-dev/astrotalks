@@ -1,23 +1,40 @@
 ---
-
 import LinkItem from "@/ui/components/LinkItem.astro";
 import RocketIcon from "@/ui/icons/RocketIcon.astro";
 ---
 
-<header class="w-full bg-gradient-to-b from-secondary  to-primary/50 h-[70px] z-10 shadow-2xl shadow-gray-950">
+<header
+    class="w-full bg-gradient-to-b from-secondary to-primary/50 h-[70px] z-10 shadow-2xl shadow-gray-950"
+>
     <div class="w-full xl:w-3/4 h-full flex justify-between items-center px-4">
         <div class="flex items-center gap-2">
-            <RocketIcon width={32} height={32} stroke={"oklch(0.65 0.15 240)"} color="none" />
+            <RocketIcon
+                width={32}
+                height={32}
+                stroke={"oklch(0.65 0.15 240)"}
+                color="none"
+            />
             <h1 class="text-3xl text-text-light font-bold exan">AstroTAlks</h1>
         </div>
-        <nav class="">
+        <nav class="lg:block md:hidden">
             <ul class="flex items-center gap-2">
-                <LinkItem href="#" label="Acerca de"  />
-                <LinkItem href="#" label="Exposiciones"  />
-                <LinkItem href="#" label="Participantes"  />
-                <LinkItem href="#" label="Postulate"  />
-                
+                <LinkItem href="#about" label="Acerca de" />
+                <LinkItem href="#talks" label="Exposiciones" />
+                <LinkItem href="#team" label="Participantes" />
+                <LinkItem href="#contact" label="Postulate" />
             </ul>
         </nav>
+<!--         <nav
+            class="lg:hidden md:block w-3/4 fixed top-0 left-0 z-10 h-[800px] bg-secondary/50 backdrop-blur-sm p-8"
+        >
+            <ul
+                class="text-text-light title text-4xl font-bold text-center uppercase flex flex-col h-full gap-12"
+            >
+                <LinkItem type="title" href="#about" label="Acerca de" />
+                <LinkItem type="title" href="#talks" label="Exposiciones" />
+                <LinkItem type="title" href="#team" label="Participantes" />
+                <LinkItem type="title" href="#contact" label="Postulate" />
+            </ul>
+        </nav> -->
     </div>
 </header>

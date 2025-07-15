@@ -1,93 +1,156 @@
 ---
+import AboutCard from "@/ui/components/cards/AboutCard.astro";
+
 interface Props {
-    description: string
+    description: string;
 }
-const { description } = Astro.props
+const { description } = Astro.props;
 ---
 
-<section class="w-full h-[700px] bg-gray-800/50 backdrop-blur-lg">
-    <div class="w-4/5 mx-auto grid py-8 h-full grid-cols-4 grid-rows-4 gap-4">
+<section class="w-full xl:h-[700px] bg-gray-800/50 backdrop-blur-lg">
+    <div class="xl:w-4/5 w-11/12 mx-auto grid py-8 h-full xl:grid-cols-4 grid-cols-2 xl:grid-rows-4 grid-rows-2 gap-4">
         <!-- Número de conferencias -->
-        <div class="bg-secondary border-primary border-2 rounded-lg col-span-1 row-span-2 p-4 flex flex-col justify-end">
-            <h2 class="text-4xl text-primary font-bold">+ 50</h2>
-            <h3 class="text-xl text-text-light font-semibold">conferencias</h3>
-            <p class="text-text-light/80 text-sm mt-2">Charlas espaciales disponibles</p>
+        <div class="col-span-1 xl:row-span-2">
+            <AboutCard>
+                <h2 class="text-4xl text-primary font-bold">+ 50</h2>
+                <h3 class="text-xl text-text-light font-semibold">
+                    conferencias
+                </h3>
+                <p class="text-text-light/80 text-sm mt-2">
+                    Charlas espaciales disponibles
+                </p>
+            </AboutCard>
         </div>
 
         <!-- Descripción principal -->
-        <div class="bg-secondary border-primary border-2 rounded-lg col-span-2 row-span-2 p-6 flex flex-col justify-center">
-            <h2 class="text-2xl text-text-light font-bold mb-4">Nuestra Misión</h2>
-            <p class="text-text-light/90 leading-relaxed">
-                {description || "Democratizamos el conocimiento sobre el espacio y la astronomía mediante un dashboard intuitivo que reúne las mejores conferencias impartidas por astronautas, astrofísicos e ingenieros espaciales. Facilitamos el acceso a contenido especializado sobre exploración espacial y descubrimientos astronómicos."}
-            </p>
+        <div class="xl:col-span-2 xl:row-span-2 row-span-3">
+            <AboutCard>
+                <h2 class="text-2xl text-text-light font-bold mb-4">
+                    Nuestra Misión
+                </h2>
+                <p class="text-text-light/90 leading-relaxed">
+                    {description}
+                </p>
+            </AboutCard>
         </div>
 
         <!-- Fecha -->
-        <div class="bg-secondary border-primary border-2 rounded-lg col-span-1 row-span-1 p-4 flex flex-col justify-center">
-            <h3 class="text-lg text-text-light font-semibold mb-2">Activo desde</h3>
-            <p class="text-2xl text-primary font-bold">2022</p>
+        <div class="col-span-1 row-span-1">
+            <AboutCard>
+                <h3 class="text-lg text-text-light font-semibold mb-2">
+                    Activo desde
+                </h3>
+                <p class="text-2xl text-primary font-bold">2022</p>
+            </AboutCard>
         </div>
 
         <!-- Plataformas -->
-        <div class="bg-secondary border-primary border-2 rounded-lg col-span-1 row-span-1 p-4 flex flex-col justify-center">
-            <h3 class="text-lg text-text-light font-semibold mb-2">Formatos</h3>
-            <div class="flex flex-wrap gap-1">
-                <span class="bg-primary/20 text-primary px-2 py-1 rounded text-xs">Video</span>
-                <span class="bg-primary/20 text-primary px-2 py-1 rounded text-xs">Audio</span>
-                <span class="bg-primary/20 text-primary px-2 py-1 rounded text-xs">Live</span>
-            </div>
+        <div class="col-span-1 row-span-1">
+            <AboutCard>
+                <h3 class="text-lg text-text-light font-semibold mb-2">
+                    Formatos
+                </h3>
+                <div class="flex flex-wrap gap-1">
+                    <span
+                        class="bg-primary/20 text-primary px-2 py-1 rounded text-xs"
+                        >Video</span
+                    >
+                    <span
+                        class="bg-primary/20 text-primary px-2 py-1 rounded text-xs"
+                        >Audio</span
+                    >
+                    <span
+                        class="bg-primary/20 text-primary px-2 py-1 rounded text-xs"
+                        >Live</span
+                    >
+                </div>
+            </AboutCard>
         </div>
 
         <!-- Categorías -->
-        <div class="bg-secondary border-primary border-2 rounded-lg col-span-2 row-span-2 p-6 flex flex-col justify-center">
-            <h3 class="text-xl text-text-light font-bold mb-4">Categorías Disponibles</h3>
-            <p class="text-text-light/90 leading-relaxed mb-4">
-                Organizamos el contenido en categorías temáticas para facilitar la búsqueda y descubrimiento de conferencias especializadas.
-            </p>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-primary/10 rounded-lg p-3">
-                    <h4 class="text-primary font-semibold text-sm mb-1">Exploración</h4>
-                    <p class="text-text-light/80 text-xs">Misiones espaciales</p>
+        <div class="col-span-2 row-span-2">
+            <AboutCard>
+                <h3 class="text-xl text-text-light font-bold mb-4">
+                    Categorías Disponibles
+                </h3>
+                <p class="text-text-light/90 leading-relaxed mb-4">
+                    Organizamos el contenido en categorías temáticas para
+                    facilitar la búsqueda y descubrimiento de conferencias
+                    especializadas.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-primary/10 rounded-lg p-3">
+                        <h4 class="text-primary font-semibold text-sm mb-1">
+                            Exploración
+                        </h4>
+                        <p class="text-text-light/80 text-xs">
+                            Misiones espaciales
+                        </p>
+                    </div>
+                    <div class="bg-primary/10 rounded-lg p-3">
+                        <h4 class="text-primary font-semibold text-sm mb-1">
+                            Astronomía
+                        </h4>
+                        <p class="text-text-light/80 text-xs">
+                            Descubrimientos
+                        </p>
+                    </div>
+                    <div class="bg-primary/10 rounded-lg p-3">
+                        <h4 class="text-primary font-semibold text-sm mb-1">
+                            Tecnología
+                        </h4>
+                        <p class="text-text-light/80 text-xs">
+                            Innovación espacial
+                        </p>
+                    </div>
+                    <div class="bg-primary/10 rounded-lg p-3">
+                        <h4 class="text-primary font-semibold text-sm mb-1">
+                            Ciencia
+                        </h4>
+                        <p class="text-text-light/80 text-xs">Astrofísica</p>
+                    </div>
                 </div>
-                <div class="bg-primary/10 rounded-lg p-3">
-                    <h4 class="text-primary font-semibold text-sm mb-1">Astronomía</h4>
-                    <p class="text-text-light/80 text-xs">Descubrimientos</p>
-                </div>
-                <div class="bg-primary/10 rounded-lg p-3">
-                    <h4 class="text-primary font-semibold text-sm mb-1">Tecnología</h4>
-                    <p class="text-text-light/80 text-xs">Innovación espacial</p>
-                </div>
-                <div class="bg-primary/10 rounded-lg p-3">
-                    <h4 class="text-primary font-semibold text-sm mb-1">Ciencia</h4>
-                    <p class="text-text-light/80 text-xs">Astrofísica</p>
-                </div>
-            </div>
+            </AboutCard>
         </div>
 
         <!-- Expertos -->
-        <div class="bg-secondary border-primary border-2 rounded-lg col-span-2 row-span-2 p-6 flex flex-col justify-center">
-            <h3 class="text-xl text-text-light font-bold mb-4">Expertos Destacados</h3>
-            <p class="text-text-light/90 leading-relaxed mb-4">
-                Colaboramos con reconocidos profesionales del sector espacial para ofrecer contenido de la más alta calidad y rigor científico.
-            </p>
-            <div class="space-y-3">
-                <div class="flex items-center gap-3">
-                    <div class="w-2 h-2 bg-accent rounded-full"></div>
-                    <span class="text-text-light/80 text-sm">Astronautas activos y retirados</span>
+        <div class="col-span-2 row-span-2">
+            <AboutCard>
+                <h3 class="text-xl text-text-light font-bold mb-4">
+                    Expertos Destacados
+                </h3>
+                <p class="text-text-light/90 leading-relaxed mb-4">
+                    Colaboramos con reconocidos profesionales del sector
+                    espacial para ofrecer contenido de la más alta calidad y
+                    rigor científico.
+                </p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-text-light/80 text-sm"
+                            >Astronautas activos y retirados</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-text-light/80 text-sm"
+                            >Astrofísicos investigadores</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-text-light/80 text-sm"
+                            >Ingenieros de misiones espaciales</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-text-light/80 text-sm"
+                            >Divulgadores científicos</span
+                        >
+                    </div>
                 </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-2 h-2 bg-accent rounded-full"></div>
-                    <span class="text-text-light/80 text-sm">Astrofísicos investigadores</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-2 h-2 bg-accent rounded-full"></div>
-                    <span class="text-text-light/80 text-sm">Ingenieros de misiones espaciales</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-2 h-2 bg-accent rounded-full"></div>
-                    <span class="text-text-light/80 text-sm">Divulgadores científicos</span>
-                </div>
-            </div>
+            </AboutCard>
         </div>
     </div>
 </section>
