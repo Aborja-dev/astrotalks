@@ -11,11 +11,11 @@ interface Props {
 const { sectionTitle, copy, formTitle } = Astro.props;
 ---
 
-<section id="contact" class="w-full py-8">
+<section id="contact" class="w-full py-8 ">
     <h2 class="text-3xl text-text-light font-bold text-center mb-8">
         {sectionTitle}
     </h2>
-    <div class="w-4/5 h-full grid grid-cols-2 gap-4 mx-auto">
+    <div class="w-4/5 h-full grid xl:grid-cols-2 grid-cols-1 gap-4 mx-auto ">
         <p class="text-text-light text-3xl">
             {copy}
         </p>
