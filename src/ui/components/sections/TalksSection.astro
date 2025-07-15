@@ -1,34 +1,100 @@
 ---
 import type { Section, TalkInfo } from "@/lib/types";
+import Badge from "@/ui/components/Badge.astro";
 import TalkCard from "@/ui/components/cards/TalkCard.astro";
-import TalkCardShort from "@/ui/components/cards/TalkCardShort.astro";
+
 
 interface Props extends Section {
-    talks: TalkInfo[]
+    talks: TalkInfo[];
 }
 
-const { talks, title, subtitle } = Astro.props
-
+const { talks, title, subtitle } = Astro.props;
 ---
 
-<section id="talks" class="w-full h-[700px] py-8 mb-32">
+<section id="talks" class="w-full xl:h-[700px] py-8 mb-32">
     <h2 class="text-3xl text-text-light font-bold text-center mb-8">{title}</h2>
-    <h3 class="text-3xl text-text-light font-bold text-center mb-8"> {subtitle}</h3>
-    <div class="w-4/5 h-full grid grid-cols-5 gap-4 mx-auto grid-rows-3">
-        <div class="col-span-3 row-span-2">
-            <TalkCard {...talks[0]} />
+    <h3 class="text-3xl text-text-light font-bold text-center mb-8">
+        {subtitle}
+    </h3>
+    <div
+        class="xl:w-4/5 w-11/12 h-full grid xl:grid-cols-5 gap-4 mx-auto xl:grid-rows-3 grid-rows-2 grid-cols-2"
+    >
+        <div class="xl:col-span-3 xl:row-span-2 col-span-2">
+            <TalkCard {...talks[0]}>
+                <div slot="tags" class="space-x-2">
+                    {talks[0].tags.map((tag) => <Badge label={tag} />)}
+                </div>
+            </TalkCard>
         </div>
-        <div class="col-span-2 row-span-2">
-            <TalkCard {...talks[1]} />
+        <div class="xl:col-span-2 xl:row-span-2">
+            <TalkCard {...talks[1]}>
+                <div slot="tags" class="space-x-2">
+                    {talks[1].tags.map((tag) => <Badge label={tag} />)}
+                </div>
+            </TalkCard>
         </div>
-        <div class="col-span-3">
-            <TalkCardShort {...talks[2]} />
+        <div class="xl:col-span-3">
+       <TalkCard coverURl={talks[2].coverURl} title={talks[2].title}>
+                <div slot="tags" class="space-x-2 block ">
+                    {talks[2].tags.map((tag) => <Badge label={tag} />)}
+                </div>
+                <Fragment slot="title">
+                    <h2
+                        class="text-3xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
+                    >
+                        {talks[2].title}
+                    </h2>
+                </Fragment>
+                <Fragment slot="description" class="block xl:hidden">
+                    <p
+                        class="block xl:hidden text-text-light transition-all duration-300 ease-out group-hover:text-text-light/90"
+                    >
+                        {talks[2].description}
+                    </p>
+                </Fragment>
+            </TalkCard>
         </div>
         <div>
-           <TalkCardShort {...talks[3]} />
+           <TalkCard coverURl={talks[3].coverURl} title={talks[3].title}>
+                <div slot="tags" class="space-x-2 block xl:hidden">
+                    {talks[3].tags.map((tag) => <Badge label={tag} />)}
+                </div>
+                <Fragment slot="title">
+                    <h2
+                        class="xl:text-lg text-3xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
+                    >
+                        {talks[3].title}
+                    </h2>
+                </Fragment>
+                <Fragment slot="description" class="block xl:hidden">
+                    <p
+                        class="block xl:hidden text-text-light transition-all duration-300 ease-out group-hover:text-text-light/90"
+                    >
+                        {talks[3].description}
+                    </p>
+                </Fragment>
+            </TalkCard>
         </div>
         <div>
-            <TalkCardShort {...talks[4]} />
+            <TalkCard coverURl={talks[4].coverURl} title={talks[4].title}>
+                <div slot="tags" class="space-x-2 block xl:hidden">
+                    {talks[4].tags.map((tag) => <Badge label={tag} />)}
+                </div>
+                <Fragment slot="title">
+                    <h2
+                        class="xl:text-lg text-3xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
+                    >
+                        {talks[4].title}
+                    </h2>
+                </Fragment>
+                <Fragment slot="description" class="block xl:hidden">
+                    <p
+                        class="block xl:hidden text-text-light transition-all duration-300 ease-out group-hover:text-text-light/90"
+                    >
+                        {talks[4].description}
+                    </p>
+                </Fragment>
+            </TalkCard>
         </div>
     </div>
 </section>
