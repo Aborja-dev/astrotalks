@@ -21,6 +21,6 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 output: 'server',
-  integrations: [db()],
+  integrations: [],
   adapter: vercel()
 });
