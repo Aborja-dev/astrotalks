@@ -4,11 +4,9 @@ import path from 'node:path'
 import url from 'node:url'
 import tailwindcss from '@tailwindcss/vite';
 const _dirname = path.dirname(url.fileURLToPath(import.meta.url))
-import db from '@astrojs/db';
-import vercelStatic from '@astrojs/vercel/static';
-import auth from 'auth-astro';
 
-import vercel from '@astrojs/vercel';
+
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,5 +20,7 @@ export default defineConfig({
   },
 output: 'server',
   integrations: [],
-  adapter: vercel()
+  adapter: vercel({
+    edgeMiddleware: true,
+  })
 });
