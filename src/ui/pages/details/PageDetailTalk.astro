@@ -1,0 +1,140 @@
+---
+import MainLayout from "@/ui/layout/MainLayout.astro";
+---
+
+
+<!-- === MAIN CONTENT === -->
+<main class="mt-20 py-8">
+    <div class="max-w-6xl mx-auto px-8">
+        <!-- === BREADCRUMB NAVIGATION === -->
+        <!-- Navegación de migas de pan para orientación -->
+        <nav class="mb-8 text-sm opacity-80">
+            <a href="#inicio" class="text-orange-500 hover:text-orange-400 transition-colors">Inicio</a>
+            <span class="mx-2">></span>
+            <a href="#conferencias" class="text-orange-500 hover:text-orange-400 transition-colors">Conferencias</a>
+            <span class="mx-2">></span>
+            <span class="text-white">El Telescopio James Webb</span>
+        </nav>
+
+        <!-- === CONFERENCE HERO SECTION === -->
+        <!-- Sección principal con imagen y información destacada -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-center">
+            <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                <img src="/api/placeholder/500/300" alt="Telescopio James Webb" class="w-full h-80 object-cover">
+                <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="bg-orange-500 bg-opacity-90 text-white px-3 py-1 rounded-full text-xs font-bold">DESTACADO</span>
+                    <span class="bg-orange-500 bg-opacity-90 text-white px-3 py-1 rounded-full text-xs font-bold">TECNOLOGÍA</span>
+                </div>
+            </div>
+            
+            <div class="text-white">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-4 text-orange-500 leading-tight">El Telescopio James Webb: Revolucionando la Astronomía</h1>
+                
+                <!-- Metadatos de la conferencia -->
+                <div class="flex flex-wrap gap-8 mb-8 text-sm lg:text-base">
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-500 text-lg">📅</span>
+                        <span>15 de Agosto, 2025</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-500 text-lg">⏰</span>
+                        <span>19:00 - 21:00</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-500 text-lg">🌍</span>
+                        <span>En línea</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-500 text-lg">👥</span>
+                        <span>200 participantes</span>
+                    </div>
+                </div>
+                
+                <p class="text-lg leading-relaxed opacity-90 mb-8">
+                    Descubre cómo el Telescopio James Webb está cambiando nuestra comprensión del universo. Desde imágenes del espacio profundo hasta descubrimientos sobre la formación de galaxias, exploraremos los avances más recientes en astronomía espacial.
+                </p>
+                
+                <!-- Botones de acción principal -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <a href="#registrarse" class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full text-center font-bold hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300">
+                        Inscribirse Ahora
+                    </a>
+                    <a href="#compartir" class="bg-transparent text-white border-2 border-white/30 px-8 py-3 rounded-full text-center font-bold hover:bg-white/10 hover:border-white/60 transition-all duration-300">
+                        Compartir
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- === CONFERENCE DETAILS TABS === -->
+        <!-- Sistema de pestañas para información detallada -->
+        <section class="mb-12">
+            <div class="flex flex-col sm:flex-row border-b-2 border-white/10 mb-8">
+                <div class="tab-button px-8 py-4 cursor-pointer transition-all duration-300 border-b-4 border-transparent hover:border-orange-500 text-center sm:text-left active" onclick="showTab('ponente')" data-tab="ponente">
+                    <span class="text-orange-500 font-semibold">Ponente</span>
+                </div>
+                <div class="tab-button px-8 py-4 cursor-pointer transition-all duration-300 border-b-4 border-transparent hover:border-orange-500 text-center sm:text-left" onclick="showTab('agenda')" data-tab="agenda">
+                    <span class="text-white hover:text-orange-500 font-semibold">Agenda</span>
+                </div>
+                <div class="tab-button px-8 py-4 cursor-pointer transition-all duration-300 border-b-4 border-transparent hover:border-orange-500 text-center sm:text-left" onclick="showTab('requisitos')" data-tab="requisitos">
+                    <span class="text-white hover:text-orange-500 font-semibold">Requisitos</span>
+                </div>
+            </div>
+
+            <!-- === SPEAKER TAB === -->
+            <!-- Información detallada del ponente -->
+            <div id="ponente" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-[150px_1fr] gap-8 items-start">
+                    <div class="justify-self-center lg:justify-self-start">
+                        <img src="/api/placeholder/150/150" alt="Dr. Elena Martínez" class="w-36 h-36 rounded-full object-cover border-4 border-orange-500">
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-2xl font-bold mb-2 text-orange-500">Dr. Elena Martínez</h3>
+                        <p class="text-lg opacity-80 mb-4">Astrofísica Especialista en Telescopios Espaciales</p>
+                        <p class="leading-relaxed opacity-90 text-white">
+                            Doctora en Astrofísica con más de 15 años de experiencia en investigación espacial. 
+                            Ha participado en múltiples misiones de la NASA y ESA, y actualmente lidera el 
+                            equipo de análisis de datos del telescopio James Webb en el Instituto de Astronomía 
+                            Espacial. Sus investigaciones se centran en la formación de galaxias y la búsqueda 
+                            de exoplanetas habitables.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === AGENDA TAB === -->
+            <!-- Cronograma detallado de la conferencia -->
+            <div id="agenda" class="tab-content hidden">
+                <div class="space-y-0">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 py-6 border-b border-white/10">
+                        <div class="min-w-[80px] font-bold text-orange-500 text-center sm:text-left">19:00</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-white mb-2">Bienvenida e Introducción</h4>
+                            <p class="opacity-80 leading-relaxed text-white">Presentación del evento y contexto histórico de los telescopios espaciales</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 py-6 border-b border-white/10">
+                        <div class="min-w-[80px] font-bold text-orange-500 text-center sm:text-left">19:15</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-white mb-2">Tecnología del James Webb</h4>
+                            <p class="opacity-80 leading-relaxed text-white">Análisis técnico de los instrumentos y capacidades del telescopio</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 py-6 border-b border-white/10">
+                        <div class="min-w-[80px] font-bold text-orange-500 text-center sm:text-left">19:45</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-white mb-2">Descubrimientos Recientes</h4>
+                            <p class="opacity-80 leading-relaxed text-white">Presentación de las imágenes y datos más impactantes obtenidos</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 py-6 border-b border-white/10">
+                        <div class="min-w-[80px] font-bold text-orange-500 text-center sm:text-left">20:15</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-white mb-2">Sesión de Preguntas</h4>
+                            <p class="opacity-80 leading-relaxed text-white">Espacio para resolver dudas y profundizar en temas específicos</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 py-6">
+                        <div class="min-w-[80px] font-bold text-orange-500 text-center sm:text-left">20:45</div>    
+</MainLayout>
+

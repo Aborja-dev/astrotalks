@@ -2,6 +2,7 @@
 import type { Section, TalkInfo } from "@/lib/types";
 import Badge from "@/ui/components/Badge.astro";
 import TalkCard from "@/ui/components/cards/TalkCard.astro";
+import Overlay from "@/ui/components/Overlay.astro";
 
 interface Props extends Section {
     talks: TalkInfo[];
@@ -18,8 +19,9 @@ const { talks, title, subtitle } = Astro.props;
     <div
         class="xl:w-4/5 w-11/12 h-full grid xl:grid-cols-5 gap-4 mx-auto xl:grid-rows-3 grid-rows-2 grid-cols-2"
     >
-        <div class="xl:col-span-3 xl:row-span-2 col-span-2">
+        <div class="xl:col-span-3 xl:row-span-2 col-span-2 relative">
             <TalkCard {...talks[0]}>
+                
                 <div slot="tags" class="space-x-2">
                     {talks[0].tags.map((tag) => <Badge label={tag} />)}
                 </div>

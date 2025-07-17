@@ -6,8 +6,9 @@ const { name, avatar, bio } = Astro.props;
 ---
 
 <article
-    class="rounded-tl-4xl h-[550px] overflow-hidden rounded-br-4xl border-2 border-primary w-full  bg-slate-700"
+    class="rounded-tl-4xl h-[550px] overflow-hidden rounded-br-4xl border-2 border-primary w-full bg-slate-700"
 >
+
     <figure class="w-full h-2/5">
         <img
             src={avatar}
@@ -21,7 +22,7 @@ const { name, avatar, bio } = Astro.props;
             {bio}
         </p>
         <div class="w-full flex justify-center">
-           <Button label="Ver más"/>
+           
         </div>
     </div>
 </article>

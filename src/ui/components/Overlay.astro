@@ -1,0 +1,21 @@
+---
+interface Gradient {
+    from: string;
+    to: string;
+}
+interface Props {
+    color: string | Gradient
+}
+
+const createGradient = (color: string | Gradient) => {
+    if (typeof color === "string") {
+        return color
+    }
+    return `linear-gradient(to bottom, ${color} 0%, ${color} 100%)`;
+}
+
+const {color} = Astro.props
+const gradient = createGradient(color);
+---
+
+<div class:list={["absolute top-0 left-0 w-full h-full bg-gradient-to-b ", gradient]}></div>

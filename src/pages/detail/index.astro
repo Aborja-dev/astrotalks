@@ -1,0 +1,112 @@
+---
+import Button from "@/ui/components/Button.astro";
+import TalkCard from "@/ui/components/cards/TalkCard.astro";
+import MainLayout from "@/ui/layout/MainLayout.astro";
+---
+
+<MainLayout title="Astro">
+    <section class="w-4/5 mx-auto p-8">
+        <div>
+            <nav class="flex gap-2 text-text-light">
+                <a class="hover:text-accent" href="#inicio">Inicio</a>
+                <span>></span>
+                <a class="hover:text-accent" href="#conferencias"
+                    >Conferencias</a
+                >
+                <span>></span>
+                <span class="text-accent">El Telescopio James Webb</span>
+            </nav>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
+            <div class="border-3 border-primary rounded-lg overflow-hidden">
+                <figure class="w-full h-full">
+                    <img class="w-full h-full object-cover" src="/public/assets/images/space3.jpg" alt="" />
+                </figure>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h2 class="text-3xl text-accent font-bold mb-4">
+                    El Telescopio James Webb
+                </h2>
+                <div class="flex flex-wrap gap-4 text-text-light text-xl">
+                    <div class="meta-item">
+                        <span>📅</span>
+                        <span>15 de Agosto, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>⏰</span>
+                        <span>19:00 - 21:00</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>🌍</span>
+                        <span>En línea</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>👥</span>
+                        <span>200 participantes</span>
+                    </div>
+                </div>
+                <p
+                    class="text-lg leading-relaxed opacity-90 mb-8 text-text-light flex-grow"
+                >
+                    Descubre cómo el Telescopio James Webb está cambiando
+                    nuestra comprensión del universo. Desde imágenes del espacio
+                    profundo hasta descubrimientos sobre la formación de
+                    galaxias, exploraremos los avances más recientes en
+                    astronomía espacial.
+                </p>
+                <div class="flex gap-4">
+                    <Button label="Inscribirse" />
+                    <Button label="Compartir" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-4/5 mx-auto p-8">
+        <nav class="flex gap-4">
+            <li
+                class="text-accent text-center p-4 border-b-2 font-bold title border-accent list-none"
+            >
+                Ponente
+            </li>
+
+        </nav>
+        <div class="py-8 flex justify-between gap-8 items-center border-y border-slate-400/50">
+            <div class="">
+                <figure
+                    class="w-[300px] h-[300px] overflow-hidden border-3 border-primary rounded-full"
+                >
+                    <img
+                        class="w-full h-full object-cover"
+                        src="/public/assets/images/user2.jpg"
+                        alt=""
+                    />
+                </figure>
+            </div>
+            <div>
+                <h2 class="text-3xl text-accent font-bold mb-4">
+                    Dr. Elena Martínez
+                </h2>
+
+                <p
+                    class="text-lg leading-relaxed opacity-90 mb-8 text-text-light flex-grow"
+                >
+                    Doctora en Astrofísica con más de 15 años de experiencia en
+                    investigación espacial. Ha participado en múltiples misiones
+                    de la NASA y ESA, y actualmente lidera el equipo de análisis
+                    de datos del telescopio James Webb en el Instituto de
+                    Astronomía Espacial. Sus investigaciones se centran en la
+                    formación de galaxias y la búsqueda de exoplanetas
+                    habitables.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="w-4/5 mx-auto p-8">
+        <h2 class="text-3xl text-accent font-bold mb-4">Conferencias relacionadas</h2>
+        <div class="py-8 flex justify-between gap-8 items-center">
+            <TalkCard title="El Telescopio James Webb" coverURl="/public/assets/images/space3.jpg" />
+            <TalkCard title="El Telescopio James Webb" coverURl="/public/assets/images/space3.jpg" />
+            <TalkCard title="El Telescopio James Webb" coverURl="/public/assets/images/space3.jpg" />
+        </div>
+    </section>
+</MainLayout>

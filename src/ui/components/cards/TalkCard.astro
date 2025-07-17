@@ -12,7 +12,9 @@ const { coverURl, title, tags = [], description = "" } = Astro.props;
 ---
 
 <article class="xl:h-full h-[450px] relative p-[2px] group cursor-pointer">
-    <figure class="h-full w-full overlay">
+    
+    <figure class="h-full w-full">
+        <div class="absolute top-0 left-0 w-full h-full from-slate-800 to-slate-800"></div>
         <img
             src={coverURl}
             class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
