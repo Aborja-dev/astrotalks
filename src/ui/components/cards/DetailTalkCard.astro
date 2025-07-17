@@ -1,17 +1,15 @@
 ---
 import Button from "@/ui/components/Button.astro";
-import LinkButton from "@/ui/components/LinkButton.astro";
 interface Props {
-    id: string;
     coverURl: string;
     title: string;
     tags?: string[];
     description?: string;
 }
-const { coverURl, title, id, description = "" } = Astro.props;
+const { coverURl, title, tags = [], description = "" } = Astro.props;
 ---
 
-<article class="xl:h-full h-[450px] relative p-[2px] group cursor-pointer">
+<article class="h-full relative p-[2px] group cursor-pointer">
     
     <figure class="h-full w-full">
         <div class="absolute top-0 left-0 w-full h-full from-slate-800 to-slate-800"></div>
@@ -30,7 +28,7 @@ const { coverURl, title, id, description = "" } = Astro.props;
         >
             <slot name="title">
                 <h2
-                    class="text-3xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
+                    class="text-xl text-text-light font-bold transition-all duration-300 ease-out group-hover:text-primary"
                 >
                     {title}
                 </h2>
@@ -43,7 +41,6 @@ const { coverURl, title, id, description = "" } = Astro.props;
                     <slot>{description}</slot>
                 </p>
             </slot>
-            <LinkButton href={`/talks/${id}`} className="text-2xl xl:text-xl" label="Ver más" />
         </div>
     </div>
 </article>

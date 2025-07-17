@@ -1,0 +1,35 @@
+---
+import LinkItem from "@/ui/components/LinkItem.astro";
+import MenuIcon from "@/ui/icons/MenuIcon.astro";
+import RocketIcon from "@/ui/icons/RocketIcon.astro";
+---
+
+<div
+    id="overlay"
+    class="fixed hidden z-10 backdrop-blur-sm top-0 left-0 w-full h-full bg-slate-700/30"
+>
+</div>
+<header
+    class="w-full bg-gradient-to-b from-secondary to-primary/80 h-[70px] z-10 shadow-2xl shadow-gray-950 backdrop-blur-lg"
+>
+    <div class="w-full xl:w-3/4 h-full flex justify-between items-center px-4">
+        <a href="/">
+            <div class="flex items-center gap-2">
+                <RocketIcon
+                    width={32}
+                    height={32}
+                    stroke={"oklch(0.65 0.15 240)"}
+                    color="none"
+                />
+                <h1 class="text-3xl text-text-light font-bold exan">AstroTAlks</h1>
+            </div>
+            </a>
+        <nav class="xl:block hidden">
+            <ul class="flex items-center gap-2">
+
+            </ul>
+        </nav>
+    </div>
+
+</header>
+

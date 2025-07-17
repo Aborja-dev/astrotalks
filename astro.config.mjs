@@ -20,7 +20,7 @@ export default defineConfig({
     },
     plugins: [tailwindcss()]
   },
-output: 'static',
+output: 'server',
   integrations: [db()],
   adapter: vercel()
 });
