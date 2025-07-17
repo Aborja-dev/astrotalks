@@ -42,7 +42,7 @@ const { talks, title, subtitle } = Astro.props;
             </TalkCard>
         </div>
         <div class="xl:col-span-3">
-            <TalkCard coverURl={talks[2].coverURl} title={talks[2].title}>
+            <TalkCard coverURl={talks[2].coverURl} title={talks[2].title} id={talks[2].id}>
                 <div slot="tags" class="flex flex-wrap xl:hidden gap-3">
                     {talks[2].tags.map((tag) => <Badge label={tag} />)}
                 </div>
@@ -63,7 +63,7 @@ const { talks, title, subtitle } = Astro.props;
             </TalkCard>
         </div>
         <div>
-            <TalkCard coverURl={talks[3].coverURl} title={talks[3].title}>
+            <TalkCard coverURl={talks[3].coverURl} title={talks[3].title} id={talks[3].id}>
                 <div slot="tags" class="flex flex-wrap gap-3 xl:hidden">
                     {talks[3].tags.map((tag) => <Badge label={tag} />)}
                 </div>
@@ -84,7 +84,7 @@ const { talks, title, subtitle } = Astro.props;
             </TalkCard>
         </div>
         <div>
-            <TalkCard coverURl={talks[4].coverURl} title={talks[4].title}>
+            <TalkCard coverURl={talks[4].coverURl} title={talks[4].title} id={talks[4].id}>
                 <div slot="tags"class="flex flex-wrap gap-3 xl:hidden">
                     {talks[4].tags.map((tag) => <Badge label={tag} />)}
                 </div>
